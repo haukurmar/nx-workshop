@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "my-first-library": "packages/my-first-library",
     "workshop": "apps/workshop",
     "workshop-e2e": "apps/workshop-e2e"
   }
