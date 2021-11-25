@@ -37,6 +37,9 @@
         "jestConfig": "packages/my-first-library/jest.config.js",
         "passWithNoTests": true
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version"
     }
   }
 }

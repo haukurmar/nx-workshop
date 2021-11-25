@@ -48,6 +48,9 @@
       "options": {
         "lintFilePatterns": ["apps/workshop/**/*.{ts,tsx,js,jsx}"]
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version"
     }
   },
   "tags": []
