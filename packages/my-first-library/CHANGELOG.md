@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.1.0](https://github.com/haukurmar/nx-workshop/compare/my-first-library-1.0.0...my-first-library-1.1.0) (2021-11-25)
+
+
+### Features
+
+* **my-cool-component:** blue colour ([6fddb80](https://github.com/haukurmar/nx-workshop/commit/6fddb80eeff7b4cff0a8a15aabd63d9bdce17242))
+
+
+
 # 1.0.0 (2021-11-25)
 
 
