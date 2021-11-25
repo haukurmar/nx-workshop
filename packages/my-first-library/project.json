@@ -1,0 +1,42 @@
+{
+  "root": "packages/my-first-library",
+  "sourceRoot": "packages/my-first-library/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/my-first-library",
+        "tsConfig": "packages/my-first-library/tsconfig.lib.json",
+        "project": "packages/my-first-library/package.json",
+        "entryFile": "packages/my-first-library/src/index.ts",
+        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "assets": [
+          {
+            "glob": "packages/my-first-library/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/my-first-library/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/my-first-library"],
+      "options": {
+        "jestConfig": "packages/my-first-library/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
