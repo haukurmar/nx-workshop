@@ -2,6 +2,15 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.2.0](https://github.com/haukurmar/nx-workshop/compare/my-first-library-1.1.0...my-first-library-1.2.0) (2021-11-25)
+
+
+### Features
+
+* **my-cool-component:** change colour to orange ([0edbd0d](https://github.com/haukurmar/nx-workshop/commit/0edbd0dc1baf76d0f013825591ad79dcb0db80ec))
+
+
+
 # [1.1.0](https://github.com/haukurmar/nx-workshop/compare/my-first-library-1.0.0...my-first-library-1.1.0) (2021-11-25)
 
 
