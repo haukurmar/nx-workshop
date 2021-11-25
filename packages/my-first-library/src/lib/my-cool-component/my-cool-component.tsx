@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 export interface MyCoolComponentProps {}
 
 const StyledMyCoolComponent = styled.div`
-  color: pink;
+  color: green;
 `;
 
 export function MyCoolComponent(props: MyCoolComponentProps) {
