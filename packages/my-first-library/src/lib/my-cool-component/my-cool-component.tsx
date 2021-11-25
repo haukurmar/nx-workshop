@@ -10,7 +10,7 @@ const StyledMyCoolComponent = styled.div`
 export function MyCoolComponent(props: MyCoolComponentProps) {
   return (
     <StyledMyCoolComponent>
-      <h1>Welcome to MyCoolComponent!</h1>
+      <h1>Welcome to MyCoolComponent</h1>
     </StyledMyCoolComponent>
   );
 }
