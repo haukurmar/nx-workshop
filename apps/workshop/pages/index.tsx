@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { MyCoolComponent } from '@nordax/my-first-library';
 
 const StyledPage = styled.div`
   .page {
@@ -15,6 +16,7 @@ export function Index() {
     <StyledPage>
       <h2>Resources &amp; Tools</h2>
       <p>Thank you for using and showing some ♥ for Nx.</p>
+      <MyCoolComponent />
       <div className="flex github-star-container">
         <a
           href="https://github.com/nrwl/nx"
