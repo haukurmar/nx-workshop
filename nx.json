@@ -1,4 +1,8 @@
 {
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "packages"
+  },
   "npmScope": "nordax",
   "affected": {
     "defaultBase": "main"
