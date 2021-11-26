@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { CustomerType } from './types/CustomerType';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useContext, useState } from 'react';
+import { ContactContext } from '.';
 
 /* eslint-disable-next-line */
 export interface CustomerFormProps {
@@ -13,6 +14,8 @@ const StyledCustomerForm = styled.div`
 
 export function CustomerForm(props: CustomerFormProps) {
   const { customer } = props;
+  const store = useContext(ContactContext);
+
   const [values, setValues] = useState(customer);
 
   const updateField = (field: keyof CustomerType, value: string) => {
@@ -24,6 +27,7 @@ export function CustomerForm(props: CustomerFormProps) {
 
   const saveCustomer = (ev: FormEvent) => {
     ev.preventDefault();
+    store.addContact(values);
     console.log('save customer', values);
   };
 
@@ -32,46 +36,46 @@ export function CustomerForm(props: CustomerFormProps) {
       <h1>Welcome to CustomerForm!</h1>
       <form onSubmit={saveCustomer}>
         <div>
-          <label htmlFor=''>
+          <label htmlFor="">
             Name:
             <input
-              type='text'
-              name='name'
+              type="text"
+              name="name"
               value={values.name}
-              onChange={ev => updateField('name', ev.target.value)}
+              onChange={(ev) => updateField('name', ev.target.value)}
             />
           </label>
         </div>
         <div>
-          <label htmlFor=''>
+          <label htmlFor="">
             Email:
             <input
-              type='text'
-              name='email'
+              type="text"
+              name="email"
               value={values.email}
-              onChange={ev => updateField('email', ev.target.value)}
+              onChange={(ev) => updateField('email', ev.target.value)}
             />
           </label>
         </div>
         <div>
-          <label htmlFor=''>
+          <label htmlFor="">
             Phone:
             <input
-              type='text'
-              name='phone'
+              type="text"
+              name="phone"
               value={values.phone}
-              onChange={ev => updateField('phone', ev.target.value)}
+              onChange={(ev) => updateField('phone', ev.target.value)}
             />
           </label>
         </div>
         <div>
-          <label htmlFor=''>
+          <label htmlFor="">
             Address:
             <input
-              type='text'
-              name='address'
+              type="text"
+              name="address"
               value={values.address}
-              onChange={ev => updateField('address', ev.target.value)}
+              onChange={(ev) => updateField('address', ev.target.value)}
             />
           </label>
         </div>

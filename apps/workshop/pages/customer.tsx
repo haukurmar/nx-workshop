@@ -1,5 +1,11 @@
 import styled from '@emotion/styled';
-import { CustomerForm, CustomerType } from '@workshop/phonebook';
+import {
+  ContactContext,
+  ContactStore,
+  CustomerForm,
+  CustomerType,
+} from '@workshop/phonebook';
+import { useContext } from 'react';
 
 const StyledPage = styled.div`
   .page {
@@ -15,8 +21,7 @@ export function Customer() {
     address: '123 Main St',
     createdAt: new Date(),
     updatedAt: new Date(),
-  }
-
+  };
   return (
     <StyledPage>
       <h2>Customer edit page!</h2>
