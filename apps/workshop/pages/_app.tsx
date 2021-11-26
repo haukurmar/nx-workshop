@@ -1,7 +1,6 @@
 import { ContactContext, ContactStore } from '@workshop/phonebook';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { createContext } from 'react';
 import './styles.css';
 import { css, Global } from '@emotion/react';
 import { LayoutWrapper, meyerCssReset } from '@nordax/main-ui';
@@ -33,13 +32,12 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>My little black book!</title>
       </Head>
       <ContactContext.Provider value={contactStore}>
-      <LayoutWrapper>
-        <Component {...pageProps} />
-      </LayoutWrapper>
-      <Global styles={[meyerCssReset, baseStyles]} />
+        <LayoutWrapper>
+          <Component {...pageProps} />
+        </LayoutWrapper>
+        <Global styles={[meyerCssReset, baseStyles]} />
       </ContactContext.Provider>
     </>
-    
   );
 }
 

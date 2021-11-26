@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@nordax/main-ui": ["packages/main-ui/src/index.ts"],
-      "@workshop/phonebook": ["packages/phonebook/src/index.ts"]
+      "@workshop/phonebook": ["packages/phonebook/src/index.ts"],
       "@nordax/my-first-library": ["packages/my-first-library/src/index.ts"]
     }
   },
