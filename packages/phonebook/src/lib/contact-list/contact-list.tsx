@@ -1,32 +1,31 @@
 import styled from '@emotion/styled';
 import { useMemo } from 'react';
 import { useTable } from 'react-table';
+import { CustomerType } from '@workshop/phonebook';
 
 /* eslint-disable-next-line */
 export interface ContactListProps {
-  contacts: Array<ContactListRow>;
+  contacts: Array<CustomerType>;
 }
-
-export type ContactListRow = {
-  firstName: string;
-  lastName: string;
-  phone: string;
-};
 
 export function ContactList(props: ContactListProps) {
   const columns = useMemo(
     () => [
       {
-        Header: 'First name',
-        accessor: 'firstName',
-      },
-      {
-        Header: 'Last name',
-        accessor: 'lastName',
+        Header: 'Name',
+        accessor: 'name',
       },
       {
         Header: 'Phone',
         accessor: 'phone',
+      },
+      {
+        Header: 'Email',
+        accessor: 'email',
+      },
+      {
+        Header: 'Address',
+        accessor: 'address',
       },
     ],
     []
