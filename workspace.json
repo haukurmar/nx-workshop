@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "my-first-library": "packages/my-first-library",
+    "phonebook": "packages/phonebook",
     "workshop": "apps/workshop",
     "workshop-e2e": "apps/workshop-e2e"
   }

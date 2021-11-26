@@ -12,6 +12,7 @@ export function Index() {
    *
    * Note: The corresponding styles are in the ./index.@emotion/styled file.
    */
+
   return (
     <StyledPage>
       <h2>Resources &amp; Tools</h2>
