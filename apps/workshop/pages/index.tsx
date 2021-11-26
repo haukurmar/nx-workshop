@@ -1,4 +1,4 @@
-import { MainNav } from '@nordax/main-ui';
+import { Heading } from '@nordax/main-ui';
 
 export function Index() {
   /*
@@ -6,7 +6,11 @@ export function Index() {
    *
    * Note: The corresponding styles are in the ./index.@emotion/styled file.
    */
-  return <div>Index page</div>;
+  return (
+    <div>
+      <Heading>Welcome to my little black book</Heading>
+    </div>
+  );
 }
 
 export default Index;
