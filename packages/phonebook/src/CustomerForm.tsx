@@ -12,6 +12,13 @@ const StyledCustomerForm = styled.div`
   color: pink;
 `;
 
+const StyledDiv = styled.div(
+  (props: { alignment?: 'left' | 'center' | 'right' }) => ({
+    display: 'flex',
+    justifyContent: props.alignment ?? 'left',
+  })
+);
+
 export function CustomerForm(props: CustomerFormProps) {
   const { customer } = props;
   const store = useContext(ContactContext);
@@ -33,9 +40,8 @@ export function CustomerForm(props: CustomerFormProps) {
 
   return (
     <StyledCustomerForm>
-      <h1>Welcome to CustomerForm!</h1>
       <form onSubmit={saveCustomer}>
-        <div>
+        <StyledDiv>
           <label htmlFor="">
             Name:
             <input
@@ -45,8 +51,8 @@ export function CustomerForm(props: CustomerFormProps) {
               onChange={(ev) => updateField('name', ev.target.value)}
             />
           </label>
-        </div>
-        <div>
+        </StyledDiv>
+        <StyledDiv>
           <label htmlFor="">
             Email:
             <input
@@ -56,8 +62,8 @@ export function CustomerForm(props: CustomerFormProps) {
               onChange={(ev) => updateField('email', ev.target.value)}
             />
           </label>
-        </div>
-        <div>
+        </StyledDiv>
+        <StyledDiv>
           <label htmlFor="">
             Phone:
             <input
@@ -67,8 +73,8 @@ export function CustomerForm(props: CustomerFormProps) {
               onChange={(ev) => updateField('phone', ev.target.value)}
             />
           </label>
-        </div>
-        <div>
+        </StyledDiv>
+        <StyledDiv>
           <label htmlFor="">
             Address:
             <input
@@ -78,10 +84,10 @@ export function CustomerForm(props: CustomerFormProps) {
               onChange={(ev) => updateField('address', ev.target.value)}
             />
           </label>
-        </div>
-        <div>
+        </StyledDiv>
+        <StyledDiv alignment="center">
           <button type="submit">Save</button>
-        </div>
+        </StyledDiv>
       </form>
     </StyledCustomerForm>
   );

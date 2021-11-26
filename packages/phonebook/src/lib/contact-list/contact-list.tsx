@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 import { useMemo } from 'react';
-import { useTable } from 'react-table';
+import { useTable, useGlobalFilter, useAsyncDebounce } from 'react-table';
 import { CustomerType } from '@workshop/phonebook';
+import React from 'react';
 
 /* eslint-disable-next-line */
 export interface ContactListProps {
@@ -33,9 +34,17 @@ export function ContactList(props: ContactListProps) {
 
   const data = useMemo(() => props.contacts, []);
 
-  const tableInstance = useTable({ columns, data });
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
+  const tableInstance = useTable({ columns, data }, useGlobalFilter);
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+    state,
+    preGlobalFilteredRows,
+    setGlobalFilter,
+  } = tableInstance;
 
   return (
     <table {...getTableProps()}>
@@ -52,8 +61,13 @@ export function ContactList(props: ContactListProps) {
                   <th {...column.getHeaderProps()}>
                     {
                       // Render the header
-                      column.render('Header')
+                      // column.render('Header')
                     }
+                    <GlobalFilter
+                      preGlobalFilteredRows={preGlobalFilteredRows}
+                      globalFilter={state.globalFilter}
+                      setGlobalFilter={setGlobalFilter}
+                    />
                   </th>
                 ))
               }
@@ -91,6 +105,36 @@ export function ContactList(props: ContactListProps) {
         }
       </tbody>
     </table>
+  );
+}
+
+function GlobalFilter({
+  preGlobalFilteredRows,
+  globalFilter,
+  setGlobalFilter,
+}) {
+  const count = preGlobalFilteredRows.length;
+  const [value, setValue] = React.useState(globalFilter);
+  const onChange = /*useAsyncDebounce(*/ (value) => {
+    setGlobalFilter(value || undefined);
+  }; //, 200);
+
+  return (
+    <span>
+      Search:{' '}
+      <input
+        value={value || ''}
+        onChange={(e) => {
+          setValue(e.target.value);
+          onChange(e.target.value);
+        }}
+        placeholder={`${count} records...`}
+        style={{
+          fontSize: '1.1rem',
+          border: '0',
+        }}
+      />
+    </span>
   );
 }
 
