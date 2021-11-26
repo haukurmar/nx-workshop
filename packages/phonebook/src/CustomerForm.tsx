@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
 import { CustomerType } from './types/CustomerType';
 import { FormEvent, useContext, useState } from 'react';
-import { ContactContext } from '.';
+
+import LukasSwag from './LukasSwag';
+import { ContactContext } from './lib/store/storeContext';
 
 /* eslint-disable-next-line */
 export interface CustomerFormProps {
@@ -24,6 +26,7 @@ export function CustomerForm(props: CustomerFormProps) {
   const store = useContext(ContactContext);
 
   const [values, setValues] = useState(customer);
+  const [showSwag, setShowSwag] = useState(false);
 
   const updateField = (field: keyof CustomerType, value: string) => {
     setValues({
@@ -36,10 +39,15 @@ export function CustomerForm(props: CustomerFormProps) {
     ev.preventDefault();
     store.addContact(values);
     console.log('save customer', values);
+
+    if (values.name.toLowerCase() === 'lukas') {
+      setShowSwag(true);
+    }
   };
 
   return (
     <StyledCustomerForm>
+      {showSwag && <LukasSwag />}
       <form onSubmit={saveCustomer}>
         <StyledDiv>
           <label htmlFor="">
