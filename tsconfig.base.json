@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nordax/my-first-library": ["packages/my-first-library/src/index.ts"],
+      "@nordax/main-ui": ["packages/main-ui/src/index.ts"],
       "@workshop/phonebook": ["packages/phonebook/src/index.ts"]
+      "@nordax/my-first-library": ["packages/my-first-library/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

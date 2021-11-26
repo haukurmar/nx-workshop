@@ -1,0 +1,34 @@
+{
+  "root": "packages/main-ui",
+  "sourceRoot": "packages/main-ui/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:package",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/main-ui",
+        "tsConfig": "packages/main-ui/tsconfig.lib.json",
+        "project": "packages/main-ui/package.json",
+        "entryFile": "packages/main-ui/src/index.ts",
+        "external": ["react/jsx-runtime", "@emotion/styled/base"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "assets": [
+          {
+            "glob": "packages/main-ui/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/main-ui/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}
