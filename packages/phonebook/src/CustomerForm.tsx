@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { CustomerType } from './types/CustomerType';
 import { FormEvent, useState } from 'react';
+import LukasSwag from './LukasSwag';
 
 /* eslint-disable-next-line */
 export interface CustomerFormProps {
@@ -19,6 +20,7 @@ const StyledDiv = styled.div((props: {alignment?: 'left' | 'center' | 'right'}) 
 export function CustomerForm(props: CustomerFormProps) {
   const { customer } = props;
   const [values, setValues] = useState(customer);
+  const [showSwag, setShowSwag] = useState(false);
 
   const updateField = (field: keyof CustomerType, value: string) => {
     setValues({
@@ -31,12 +33,13 @@ export function CustomerForm(props: CustomerFormProps) {
     ev.preventDefault();
 
     if(values.name.toLowerCase() === "lukas") {
-      alert("Lukas is a bad name");
+      setShowSwag(true);
     }
   };
 
   return (
     <StyledCustomerForm>
+      {showSwag && <LukasSwag />}
       <form onSubmit={saveCustomer}>
         <StyledDiv>
           <label htmlFor=''>
