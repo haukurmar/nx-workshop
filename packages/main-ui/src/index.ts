@@ -1,1 +1,1 @@
-export * from './lib/MainUi';
+export * from './MainNav';
