@@ -3,32 +3,43 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { createContext } from 'react';
 import './styles.css';
+import { css, Global } from '@emotion/react';
+import { LayoutWrapper, meyerCssReset } from '@nordax/main-ui';
+
+const baseStyles = css`
+  html {
+    height: 100%;
+    min-height: 100%;
+  }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+  }
+
+  body,
+  #__next {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+`;
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const contactStore = new ContactStore();
   return (
-    <ContactContext.Provider value={contactStore}>
-      <>
-        <Head>
-          <title>Welcome to workshop!</title>
-        </Head>
-        <div className="app">
-          <header className="flex">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/nx-logo-white.svg"
-              alt="Nx logo"
-              width="75"
-              height="50"
-            />
-            <h1>Welcome to workshop!</h1>
-          </header>
-          <main>
-            <Component {...pageProps} />
-          </main>
-        </div>
-      </>
-    </ContactContext.Provider>
+    <>
+      <Head>
+        <title>My little black book!</title>
+      </Head>
+      <ContactContext.Provider value={contactStore}>
+      <LayoutWrapper>
+        <Component {...pageProps} />
+      </LayoutWrapper>
+      <Global styles={[meyerCssReset, baseStyles]} />
+      </ContactContext.Provider>
+    </>
+    
   );
 }
 
