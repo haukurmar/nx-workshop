@@ -1,1 +1,1 @@
-export * from './lib/phonebook';
+export * from './CustomerForm';
