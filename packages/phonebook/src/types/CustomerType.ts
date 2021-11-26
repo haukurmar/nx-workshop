@@ -4,8 +4,8 @@ type CustomerType = {
   phone: string;
   email: string;
   address: string;
-  createdAt: string;
-  updatedAt: string;
+  createdAt: Date;
+  updatedAt: Date;
 };
 
 export type { CustomerType };
