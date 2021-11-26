@@ -9,7 +9,16 @@ type MainNavProps = {
 const MainNav = (props: MainNavProps) => {
   const styles = useMainNavStyles(props);
 
-  return <div css={styles.root}>Main Nav</div>;
+  // TODO: We need to get component items in here at some point
+
+  return (
+    <div css={styles.root}>
+      <ul css={styles.listWrapper}>
+        <li css={styles.listItem}>Home</li>
+        <li css={styles.listItem}>Search</li>
+      </ul>
+    </div>
+  );
 };
 
 export { MainNav };
