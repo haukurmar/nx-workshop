@@ -2,8 +2,6 @@
 import { useHeadingStyles } from './headingStyles';
 import { ReactNode } from 'react';
 
-type HeadingType = 'main' | 'sub';
-
 type HeadingProps = {
   children?: ReactNode;
 } & HeadingDefaultProps;
