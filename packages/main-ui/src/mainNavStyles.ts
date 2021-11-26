@@ -11,11 +11,11 @@ const useMainNavStyles = (props: MainNavProps): MainNavStyles => {
   return {
     root: {},
     listWrapper: {
-      margin: '40px 20px',
+      margin: '56px 20px',
     },
     listItem: {
       color: '#fff',
-      padding: '8px 0',
+      margin: '0 0 16px 0',
     },
   };
 };

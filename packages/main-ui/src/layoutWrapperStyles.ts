@@ -14,16 +14,17 @@ const useLayoutWrapperStyles = (
     root: {
       display: 'flex',
       flexDirection: 'row',
-      border: '1px solid red',
       height: '100%',
     },
     nav: {
       backgroundColor: '#30343d',
-      minWidth: '30%',
+      minWidth: '220px',
     },
     main: {
-      backgroundColor: 'green',
-      width: '70%',
+      backgroundColor: '#fff',
+      color: '#242424',
+      width: '100%',
+      padding: '56px 24px',
     },
   };
 };
